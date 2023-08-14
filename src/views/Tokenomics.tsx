@@ -20,7 +20,7 @@ const Tokenomics = () => {
     }
 
     return (
-        <section className="w-full min-h-screen h-auto px-5 relative bg-bg pt-[20rem] pb-44">
+        <section className="w-full min-h-screen h-auto px-5 relative bg-bg pt-[20rem] pb-44" id="tokenomics">
 
             <div className="bg-bg w-full h-[15rem] mg:h-[20rem] absolute -top-28 left-0 z-10 blur-3xl"></div>
             <div className="bg-bg w-full h-[15rem] mg:h-[20rem] absolute -bottom-28 left-0 z-10 blur-3xl"></div>

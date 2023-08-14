@@ -26,7 +26,7 @@ const About = () => {
 
 
     return (
-        <section className="w-full min-h-screen h-auto px-5 bg-bg relative">
+        <section className="w-full min-h-screen h-auto px-5 bg-bg relative" id="about">
             <motion.img animate={animation} src="/about/green.webp" alt="green" className="mx-auto md:w-auto w-[20rem] mb-auto md:relative absolute bottom-28 left-0 right-0 md:opacity-100 opacity-50" />
 
             <div className="absolute bottom-0 w-full left-0 botom-0">

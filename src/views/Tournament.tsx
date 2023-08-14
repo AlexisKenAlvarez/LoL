@@ -22,7 +22,7 @@ const Tournament = () => {
     ]
 
     return (
-        <section className="w-full min-h-[80vh] bg-bg relative px-5 flex items-center sm:pt-0 pt-44">
+        <section className="w-full min-h-[80vh] bg-bg relative px-5 flex items-center sm:pt-0 pt-44" id="tournament">
 
             <div className="max-w-[1400px] w-full mx-auto flex flex-col items-center h-fit">
 

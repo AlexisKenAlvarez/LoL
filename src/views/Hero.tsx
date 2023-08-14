@@ -44,7 +44,7 @@ const Hero = () => {
                     </motion.div>}
             </AnimatePresence >
 
-            <section className={`w-full min-h-screen bg-bg h-auto relative flex items-center justify-center  px-5 transition-all ease-in-out duration-500 ${scrolled ? 'opacity-0 z-[10]' : 'opacity-100 z-[12]'}`}>
+            <section className={`w-full min-h-screen bg-bg h-auto relative flex items-center justify-center  px-5 transition-all ease-in-out duration-500 ${scrolled ? 'opacity-0 z-[10]' : 'opacity-100 z-[12]'}`} id="home">
 
                 {/* <div className="w-full h-full absolute bg-bg bottom-0 right-0 z-10"></div> */}
 

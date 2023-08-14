@@ -17,18 +17,13 @@ const Nav = () => {
             type: 'internal'
         },
         {
-            title: 'tokenomics',
-            link: '#tokenomics',
-            type: 'internal'
-        },
-        {
-            title: 'roadmap',
-            link: '#roadmap',
-            type: 'internal'
-        },
-        {
             title: 'tournament',
             link: '#tournament',
+            type: 'internal'
+        },
+        {
+            title: 'tokenomics',
+            link: '#tokenomics',
             type: 'internal'
         },
         {

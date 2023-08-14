@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 @layer base {
+
+    html, body {
+        scroll-behavior: smooth;
+    }
+
     @font-face {
         font-family: 'LoL';
         src: url('../fonts/BeaufortforLOL-Regular.woff') format('woff');

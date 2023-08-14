@@ -64,7 +64,7 @@ const Roadmap = () => {
     return (
         <>
 
-            <section className="w-full min-h-screen relative z-10 px-5 bg-bg">
+            <section className="w-full min-h-screen relative z-10 px-5 bg-bg" id='roadmap'>
                 <div className="max-w-[1400px] w-full mx-auto">
                     <img src="/roadmap/map.webp" alt="Map" className="absolute left-0 right-0 mx-auto" />
                     <div className="relative z-10 w-fit mx-auto my-auto h-fit overflow-hidden p-3">
