@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        mocha: 'D0A85C',
+        mocha: '#D0A85C',
         cyan: '#0ED4FF',
-        bg: '#161616'
+        bg: '#030608'
       },
       fontFamily: {
         primary: 'LoL',

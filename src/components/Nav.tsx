@@ -27,8 +27,8 @@ const Nav = () => {
             type: 'internal'
         },
         {
-            title: 'exchanges',
-            link: '#exchanges',
+            title: 'tournament',
+            link: '#tournament',
             type: 'internal'
         },
         {

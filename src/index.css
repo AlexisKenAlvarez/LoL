@@ -44,6 +44,10 @@
     }
 
     .text-shadow {
-        text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .road-svg {
+        fill: rgb(195, 144, 49)
     }
 }
