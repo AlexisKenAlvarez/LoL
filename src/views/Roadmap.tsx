@@ -1,4 +1,8 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { GiFlamer } from 'react-icons/gi'
+import Sphere from '../../videos/sphere.mp4'
+import Footer from "../components/Footer";
 
 const Roadmap = () => {
 
@@ -61,6 +65,8 @@ const Roadmap = () => {
         },
     ]
 
+    const arr = [...new Array(3)]
+
     return (
         <>
 
@@ -73,14 +79,23 @@ const Roadmap = () => {
                     </div>
                 </div>
             </section>
-            <section className="w-full min-h-screen h-auto relative z-10 flex items-center">
-                
+            <section className="w-full min-h-[80vh] h-auto relative z-10 items-start pt-28">
 
-                <div className="mx-auto w-full flex">
-                    
+                <video
+                    src={Sphere}
+                    autoPlay
+                    muted
+                    playsInline
+                    loop
+                    className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover z-0 opacity-30"
 
-                    <div className="w-full mx-auto flex gap-x-20 relative pl-24">
-                        <div className="absolute bottom-2 w-full h-[1px] mx-auto left-0 right-0 bg-mocha/70 z-10"></div>
+                />
+
+                <div className="mx-auto w-full flex lg:flex-row flex-col">
+
+
+                    <div className="w-full mx-auto items-center h-[40vh] lg:h-[70vh] flex gap-x-10 sm:gap-x-20 relative lg:pl-20 xl:lg:pl-44 lg:justify-start justify-center z-10">
+                        <div className="absolute top-[7.8rem] bottom-0 my-auto w-full h-[1px] mx-auto left-0 right-0 bg-mocha/70 z-10"></div>
                         {phases.map((phase, index) => {
                             return (
                                 <button className="flex flex-col items-center group" key={index} onClick={() => { handleClick(index) }}>
@@ -108,11 +123,73 @@ const Roadmap = () => {
                         })}
                     </div>
 
-                    <div className="w-full">
+                    <div className="w-full lg:pr-20 xl:pr-44 mt-20 max-w-[20rem] sm:max-w-[23rem] mx-auto lg:max-w-[50rem] lg:mx-0 lg:mt-0 relative">
 
+                        <div className="w-full h-full border-[1px] border-mocha/70 relative bg-bg/30 backdrop-blur-sm">
+                            <AnimatePresence mode="wait">
+                                {arr.map((items, i) => {
+                                    return (
+                                        selected === i ?
+                                            <motion.div initial={{ opacity: 0, scaleY: 0.5 }}
+                                                animate={{ opacity: 100, scaleY: 1 }}
+                                                exit={{ scaleY: 0.5, opacity: 0 }}
+                                                transition={{ duration: 0.35, ease: [0.16, 0.77, 0.47, .97] }}
+                                                className=""
+                                                key={i}>
+                                                <img
+                                                    src={`/roadmap/phase${selected + 1}.webp`}
+                                                    alt={`RoadImage${items + 1}`}
+                                                    className="absolute w-[15rem] left-0 mx-auto z-10 -translate-y-1/2 top-0 right-0"
+
+                                                />
+                                            </motion.div>
+
+                                            : null
+
+                                    )
+                                })}
+                            </AnimatePresence>
+
+                            <div className="w-20 h-20 absolute top-0 right-0 border-t-4 border-r-4 border-mocha "></div>
+                            <div className="w-20 h-20 absolute bottom-0 left-0 border-t-4 border-r-4 border-mocha rotate-180"></div>
+                            <AnimatePresence mode="wait">
+                                {phases.map((items, index) => {
+                                    return (
+                                        selected === index ?
+                                            <motion.div
+                                                initial={{ maxHeight: '0rem', }}
+                                                animate={{ maxHeight: '80rem', }}
+                                                transition={{ duration: 5, ease: [0.16, 0.77, 0.47, .97] }}
+                                                className='text-white relative z-10 overflow-hidden'
+                                                key={index}>
+                                                <div className="p-8 w-full h-full">
+                                                    <h1 className="font-primary text-3xl font-bold text-mocha">Phase {index + 1}</h1>
+                                                    <h2 className="font-primary text-xl font-medium text-shadow">
+                                                        {items.title}
+                                                    </h2>
+                                                    <ul className="flex flex-col gap-y-3 mt-10">
+                                                        {items.list.map((item, index) => {
+                                                            return (
+                                                                <li className="font-secondary flex items-center gap-x-2 text-white/80" key={index}>
+                                                                    <GiFlamer />
+                                                                    <p className="">
+                                                                        {item}
+                                                                    </p>
+                                                                </li>
+                                                            )
+                                                        })}
+                                                    </ul>
+                                                </div>
+
+                                            </motion.div> : null
+                                    )
+                                })}
+                            </AnimatePresence>
+
+                        </div>
                     </div>
                 </div>
-
+                <Footer />
             </section>
         </>
     );

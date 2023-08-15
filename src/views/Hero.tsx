@@ -6,10 +6,17 @@ import { useEffect, useState } from 'react';
 const Hero = () => {
 
     const [loaded, setLoaded] = useState(false)
+    const [loaded2, setLoaded2] = useState(false)
 
     const handleLoaded = () => {
         setTimeout(() => {
             setLoaded(true)
+        }, 1500);
+    }
+
+    const handleLoaded2 = () => {
+        setTimeout(() => {
+            setLoaded2(true)
         }, 1500);
     }
 
@@ -34,7 +41,7 @@ const Hero = () => {
     return (
         <>
             <AnimatePresence>
-                {loaded ?
+                {loaded && loaded2 ?
                     null
                     : <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} className={`bg-bg top-0 left-0 w-full h-full fixed z-[52] flex items-center justify-center`} key="LOADER">
                         <motion.img animate={{ scale: [1.2, 1] }} exit={{ scale: 2 }} transition={{ duration: 2 }} src="/logo.webp" alt="Logo" className="w-56 mx-auto relative z-10" />
@@ -85,6 +92,7 @@ const Hero = () => {
                     muted
                     playsInline
                     loop
+                    onLoadedData={handleLoaded2}
                     className="w-full h-full object-cover fixed top-0 left-0 blur-md"
                 />
             </section>
